@@ -1,1 +1,40 @@
 <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Golden Odds</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TELÓN -->
+  <div id="curtain-container">
+    <div id="curtain-left"></div>
+    <div id="curtain-right"></div>
+    <img
+        id="rope"
+        src="imagenes/Cuerdas/Cuerda-8.png"
+        alt="Cuerda del telón"
+    />
+    <div id="intro-text">
+      El espectáculo aún no ha comenzado
+    </div>
+  </div>
+
+  <!-- ESCENARIO -->
+  <div id="stage"></div>
+
+  <!-- DISCO -->
+  <div id="music-disc" class="paused">
+    <img src="Imagenes/Disco.png" alt="Disco">
+  </div>
+
+  <!-- AUDIO -->
+  <audio id="music" loop>
+    <source src="musica/stage.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
