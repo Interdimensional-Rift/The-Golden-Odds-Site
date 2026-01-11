@@ -3,6 +3,9 @@ const rope = document.getElementById("rope");
 const stage = document.getElementById("stage");
 const music = document.getElementById("music");
 const disc = document.getElementById("music-disc");
+const musicPanel = document.getElementById("music-panel");
+const songList = document.getElementById("song-list");
+const muteBtn = document.getElementById("mute-btn");
 
 let showStarted = false;
 let muted = false;
@@ -85,3 +88,31 @@ function rotateDisc(timestamp) {
     requestAnimationFrame(rotateDisc);
   }
 }
+
+// Toggle panel al click en el disco
+disc.addEventListener("click", () => {
+  musicPanel.classList.toggle("hidden");
+});
+
+// Seleccionar canción
+songList.querySelectorAll("li").forEach(li => {
+  li.addEventListener("click", () => {
+    const src = li.getAttribute("data-src");
+    music.src = src;
+    music.play();
+    disc.classList.add("playing");
+    muted = false;
+  });
+});
+
+// Botón de mute
+muteBtn.addEventListener("click", () => {
+  if (muted) {
+    music.play();
+    disc.classList.add("playing");
+  } else {
+    music.pause();
+    disc.classList.remove("playing");
+  }
+  muted = !muted;
+});
