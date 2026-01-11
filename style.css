@@ -104,7 +104,7 @@ html, body {
 #stage.visible {
   opacity: 1;
   pointer-events: auto;
-  z-index: 10;
+  z-index: 11;
 }
 
 /* DISCO */
@@ -189,5 +189,6 @@ html, body {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
 
 
