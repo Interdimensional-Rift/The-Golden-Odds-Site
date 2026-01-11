@@ -20,6 +20,9 @@ rope.addEventListener("click", () => {
   if (showStarted) return;
   showStarted = true;
 
+  
+
+
   // Estirón
   rope.classList.add("pull");
 
@@ -40,6 +43,19 @@ rope.addEventListener("click", () => {
     music.play();
     startDiscSpin();
   }, 1200);
+
+// Aparece el texto estilo parallax
+const parallaxText = document.getElementById("parallax-text");
+setTimeout(() => {
+  parallaxText.style.opacity = "1";
+
+  // Movimiento simple parallax al hacer scroll
+  window.addEventListener("scroll", () => {
+    const scrolled = window.scrollY;
+    parallaxText.style.transform = `translate(-50%, calc(-50% + ${scrolled * 0.3}px))`;
+  });
+}, 1300); // espera a que el escenario sea visible
+
 });
 
 // ---------------------
@@ -101,3 +117,4 @@ muteBtn.addEventListener("click", () => {
   }
   muted = !muted;
 });
+
