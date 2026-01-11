@@ -42,21 +42,6 @@ rope.addEventListener("click", () => {
   }, 1200);
 });
 
-// Disco = mute / play
-disc.addEventListener("click", () => {
-  if (!showStarted) return;
-
-  if (muted) {
-    music.play();
-    startDiscSpin();
-  } else {
-    music.pause();
-    stopDiscSpin();
-  }
-
-  muted = !muted;
-});
-
 // ---------------------
 // FUNCIONES DE DISC
 // ---------------------
